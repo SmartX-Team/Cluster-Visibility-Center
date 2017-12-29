@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block active %}
+<li>
+    <a href="http://210.117.251.44:6217">Home</a>
+</li>
+<li class="active">
+    <a href="http://210.117.251.44:6217/api">APIs</a>
+</li>
+<li>
+    <a href="http://210.117.251.44:6217/vis">Visualization</a>
+</li>
+{% endblock %}
+
+
+
+{% block content %}
+<!-- Contents -->
+<div class="container">
+    <div class="jumbotron">
+        <h1>How to use RESTful APIs?</h1>
+        <p>RESTful APIs that response JSON format data for visibility data collected by IO Visor.</p>
+        <p><a class="btn btn-lg btn-primary" href="http://210.117.251.44:6217/api/testapi">Example &raquo;</a></p>
+    </div>
+
+    <div class="alert alert-info">
+        <p>Depending on the size of visibility data, it may take some time.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                <p>
+                    <form action="" method="get">
+                         <input type="text" name="q" value="{{ q }}" />
+                         <input type="submit" value="Search" class="btn btn-primary" />
+                    </form>
+                </p>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>API 명</th>
+                            <th>요약 설명</th>
+                            <th>URL</th>
+                            <th>생성일</th>
+                            <th>제작자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for api in api_list %}
+                            <tr>
+                                <td>{{ api.name }}</td>
+                                <td>{{ api.desc }}</td>
+                                <td><a href="http://210.117.251.44:6217/api{{ api.url }}">{{ api.url }}</a></td>
+                                <td>{{ api.date }}</td>
+                                <td>{{ api.author }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

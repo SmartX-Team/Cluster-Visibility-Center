@@ -1,0 +1,79 @@
+
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <title>IO Visor for Site Guard Post</title>
+
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link rel="shortcut icon" href="{% static "imgs/favicon.ico" %}" />
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://210.117.251.44:6217">IOVisor for Site Visibility Framework</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {% block active %}
+                        <li class="active">
+                            <a href="http://http://210.117.251.44:6217">Home</a>
+                        </li>
+                        <li>
+                            <a href="http://210.117.251.44:6217/api">APIs</a>
+                        </li>
+                        <li>
+                            <a href="http://210.117.251.44:6217/vis">Visualization</a>
+                        </li>
+                    {% endblock %}
+                </ul>
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="#">Sign in</a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    <!-- Contents -->
+    <div class="container">
+        <div class="jumbotron">
+            <!-- <h1>IOVisor for Site Guard Post <sup>by Taekho Nam</sup></h1> -->
+            <h1>IOVisor for Site Visibility Framework</h1>
+            <p>for visible transport leveraging IO Visor eBPF/BCC-based packet tracing.</p>
+                <a class="btn btn-lg btn-primary" href="https://github.com/thnam91/iovisor-visibility-support">Github Repo &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <div id="page-footer">
+        <div class="container">
+            <p class="text-muted">
+                &copy; Networked Computing Systems Lab, School of Electrical Engineering and Computer Science, GIST<br/>
+                123, Cheomdangwagi-ro, Buk-gu, Gwangju, Republic of Korea
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
