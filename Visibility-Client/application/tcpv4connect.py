@@ -33,7 +33,7 @@ BPF_HASH(currsock, u32, struct sock *);
 
 int kprobe__tcp_v4_connect(struct pt_regs *ctx, struct sock *sk)
 {
-	u32 pid = bpf_get_current_pid_tgid();
+    u32 pid = bpf_get_current_pid_tgid();
 
 	// stash the sock ptr for lookup on return
 	currsock.update(&pid, &sk);

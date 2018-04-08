@@ -2,13 +2,13 @@
 
 {% block active %}
 <li>
-    <a href="http://210.117.251.44:6217">Home</a>
+    <a href="http://210.117.251.22:6217">Home</a>
 </li>
 <li class="active">
-    <a href="http://210.117.251.44:6217/api">APIs</a>
+    <a href="http://210.117.251.22:6217/api">APIs</a>
 </li>
 <li>
-    <a href="http://210.117.251.44:6217/vis">Visualization</a>
+    <a href="http://210.117.251.22:6217/vis">Visualization</a>
 </li>
 {% endblock %}
 
@@ -20,7 +20,7 @@
     <div class="jumbotron">
         <h1>How to use RESTful APIs?</h1>
         <p>RESTful APIs that response JSON format data for visibility data collected by IO Visor.</p>
-        <p><a class="btn btn-lg btn-primary" href="http://210.117.251.44:6217/api/testapi">Example &raquo;</a></p>
+        <p><a class="btn btn-lg btn-primary" href="http://210.117.251.22:6217/api/testapi">Example &raquo;</a></p>
     </div>
 
     <div class="alert alert-info">
@@ -51,7 +51,7 @@
                             <tr>
                                 <td>{{ api.name }}</td>
                                 <td>{{ api.desc }}</td>
-                                <td><a href="http://210.117.251.44:6217/api{{ api.url }}">{{ api.url }}</a></td>
+                                <td><a href="http://210.117.251.22:6217/api{{ api.url }}">{{ api.url }}</a></td>
                                 <td>{{ api.date }}</td>
                                 <td>{{ api.author }}</td>
                             </tr>

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from .models import API
 import json
 
-client = InfluxDBClient('210.117.251.44', 8086, 'root', 'root', 'onk')
+client = InfluxDBClient('210.117.251.22', 8086, 'root', 'root', 'onk')
 
 def api_main(request):
     qs = API.objects.all()
