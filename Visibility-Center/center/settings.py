@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import raven
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -147,3 +148,7 @@ RAVEN_CONFIG = {
     # release based on the git info.
     'release': release,
 }
+
+# Additional Parameters
+CENTER_IP_ADDRESS = sys.argv[-1].split(":")[0]
+CENTER_PORT = sys.argv[-1].split(":")[1]

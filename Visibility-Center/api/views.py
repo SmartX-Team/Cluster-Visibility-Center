@@ -2,21 +2,25 @@ from influxdb import InfluxDBClient
 from django.http import JsonResponse, HttpRequest, HttpResponse
 from django.shortcuts import render
 from .models import API
-import json
+from django.conf import settings
 
-client = InfluxDBClient('210.117.251.22', 8086, 'root', 'root', 'onk')
+client = InfluxDBClient('127.0.0.1', 8086, 'root', 'root', 'onk')
 
 def api_main(request):
-    qs = API.objects.all()
+    template_info = dict()
 
+    qs = API.objects.all()
     q = request.GET.get('q', '')
     if q:
         qs = qs.filter(name__icontains=q)
 
-    return render(request, 'api/layout.html', {
-        'api_list': qs,
-        'q': q,
-    })
+    template_info['api_list'] = qs
+    template_info['q'] = q
+
+    template_info["center_ip_address"] = getattr(settings, 'CENTER_IP_ADDRESS')
+    template_info["center_port"] = getattr(settings, 'CENTER_PORT')
+
+    return render(request, 'api/layout.html', template_info)
 
 
 def test_api(request):

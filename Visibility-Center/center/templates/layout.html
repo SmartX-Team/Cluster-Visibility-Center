@@ -23,19 +23,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://210.117.251.22:6217">IOVisor for Site Visibility Framework</a>
+                <a class="navbar-brand" href="http://{{ center_ip_address }}:{{ center_port }}">IOVisor for Site Visibility Framework</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     {% block active %}
                         <li class="active">
-                            <a href="http://http://210.117.251.22:6217">Home</a>
+                            <a href="http://{{ center_ip_address }}:{{ center_port }}">Home</a>
                         </li>
                         <li>
-                            <a href="http://210.117.251.22:6217/api">APIs</a>
+                            <a href="http://{{ center_ip_address }}:{{ center_port }}/api">APIs</a>
                         </li>
                         <li>
-                            <a href="http://210.117.251.22:6217/vis">Visualization</a>
+                            <a href="http://{{ center_ip_address }}:{{ center_port }}/vis">Visualization</a>
                         </li>
                     {% endblock %}
                 </ul>
