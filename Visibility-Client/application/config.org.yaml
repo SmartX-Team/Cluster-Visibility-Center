@@ -1,0 +1,6 @@
+database:
+    ip_address: <DB IP Address>
+    port: <DB Port>
+    name: <DB Name>
+    id: <DB Account ID>
+    pw: <DB Account PW>
