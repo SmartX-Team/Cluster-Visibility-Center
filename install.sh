@@ -34,7 +34,7 @@ install_grafana_plugin(){
     grafana-cli plugins install grafana-worldmap-panel
     systemctl restart grafana-server.service
 }
-if [ id -u -ne 0 ]; then
+if [ `id -u` -ne 0 ]; then
     echo "This script should be executed with ROOT privilege"
     exit 1
 fi
